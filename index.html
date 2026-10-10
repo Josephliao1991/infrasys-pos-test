@@ -29,7 +29,10 @@ ol{margin:0;padding-left:1.3em;color:var(--muted);font-size:15px}
 button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 #launch{width:100%;padding:16px;border:0;border-radius:12px;background:var(--accent);
   color:var(--accent-fg);font-size:17px;font-weight:700}
-#launch:active{opacity:.85}
+#launch:active,.btn-secondary:active{opacity:.85}
+.step{display:flex;flex-direction:column;gap:10px}
+.btn-secondary{display:block;text-align:center;text-decoration:none;padding:14px;border-radius:12px;
+  border:1.5px solid var(--accent);color:var(--accent);background:transparent;font-size:16px;font-weight:700}
 #status{font-size:14px;padding:10px 12px;border-radius:8px;background:var(--code-bg);color:var(--muted)}
 #status.done{color:var(--ok)}
 .url{display:flex;gap:8px}
@@ -47,12 +50,15 @@ button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
     <p class="eyebrow">iOS Shortcuts · URL Scheme</p>
     <h1>Infrasys POS 跳轉測試</h1>
   </div>
-  <ol>
-    <li>在 iPhone「捷徑」App 建立名稱完全相同的捷徑 <strong>OpenInfrasysPOS</strong></li>
-    <li>捷徑動作設為「打開 App → Infrasys POS」</li>
-    <li>用 Safari 開啟本頁，點下方按鈕</li>
-  </ol>
-  <button id="launch" type="button">開啟 Infrasys POS</button>
+  <section class="step">
+    <p class="eyebrow">步驟 1 · 首次使用</p>
+    <p>安裝捷徑後，在「捷徑」App 確認名稱為 <strong>OpenInfrasysPOS</strong>（大小寫需一致，不能是「OpenInfrasysPOS 1」）。</p>
+    <a id="install" class="btn-secondary" href="https://www.icloud.com/shortcuts/61824c8cc5784006aabc087532650248">設定捷徑</a>
+  </section>
+  <section class="step">
+    <p class="eyebrow">步驟 2 · 開啟 POS</p>
+    <button id="launch" type="button">開啟 Infrasys POS</button>
+  </section>
   <p id="status" role="status">等待操作</p>
   <div>
     <p class="eyebrow" style="margin-bottom:6px">跳轉網址</p>
